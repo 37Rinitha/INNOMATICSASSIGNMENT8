@@ -41,12 +41,114 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
   }
+  .table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+  }
   
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  @media (max-width: 768px) {
+    /* Stack columns vertically on very small screens */
+    table {
+      display: block;
+      width: 100%;
+    }
+    thead {
+      display: none;
+    }
+    tr {
+      display: block;
+      margin-bottom: 10px;
+    }
+    td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    td:before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+  .register-student form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  input, button {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    /* Stack form inputs vertically */
+    .register-student form {
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+  .dashboard {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dashboard-stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-stats {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
   button {
     background-color: red;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .navbar ul {
+      flex-direction: column;
+      text-align: center;
+    }
+    .navbar ul li {
+      margin: 10px 0;
+    }
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .container > div {
+    flex: 1 1 45%; /* Adjust based on screen size */
+    min-width: 250px;
+    max-width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .container > div {
+      flex: 1 1 100%;
+    }
   }
   
